@@ -1,0 +1,20 @@
+registers:
+rax = register accumulator extended   (syscall number)
+rdi = register destination index      (arg 0)
+rsi = register source index           (arg 1)
+rdx = register data extended          (arg 2)
+
+r8 through r15 - These are the "safest" for your own data since they don't have special purposes
+rbx - Good for general storage (callee-saved, so preserved across function calls)
+
+Use with some caution:
+rax - Return values, also used for syscall numbers
+rcx - Sometimes used for loop counters
+rdx - Often used for additional parameters or multiplication/division
+
+Avoid or use carefully:
+rsp - Stack pointer (don't mess with this unless you know what you're doing!)
+rbp - Base pointer (often used for stack frames)
+rdi, rsi - Used for syscall parameters (1st and 2nd arguments)
+r10, r11 - Can be modified by syscalls
+
