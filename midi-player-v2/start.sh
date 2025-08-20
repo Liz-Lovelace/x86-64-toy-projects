@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 rm -f tmp/main.o tmp/main
 
 # Compile with NASM
-if nasm -f elf64 src/main.asm -o tmp/main.o 2>&1; then
+if nasm -f elf64 -g -F dwarf src/main.asm -o tmp/main.o 2>&1; then
     echo -e "${GREEN}✓ assembly${NC}"
     
     # Link
@@ -20,7 +20,7 @@ if nasm -f elf64 src/main.asm -o tmp/main.o 2>&1; then
         
         # Run with timeout (1 second)
         # if timeout 1s tmp/main; then
-        if timeout 1s sh -c "tmp/main | aplay -f S16_LE -r 44100 -c 1 --duration=1"; then
+        if timeout 12s sh -c "tmp/main | aplay -f S16_LE -r 44100 -c 1 --duration=12"; then
             exit_code=$?
             echo ""
             echo ""

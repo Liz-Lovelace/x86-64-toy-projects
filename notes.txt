@@ -5,6 +5,8 @@ rsi = register source index           (arg 1)
 rdx = register data extended          (arg 2)
 
 r8 through r15 - These are the "safest" for your own data since they don't have special purposes
+BUT NOT FUCKING r11, THAT ISN'T SAFE
+
 rbx - Good for general storage (callee-saved, so preserved across function calls)
 
 Use with some caution:
