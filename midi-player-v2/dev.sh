@@ -6,5 +6,5 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-watchexec --watch input.txt --watch src --clear --restart ./start.sh
+watchexec --watch track-to-play.liztrack --watch src --clear --restart ./compile-and-start-with-timeout.sh
 
