@@ -1,0 +1,12 @@
+REGISTERS
+t0-t6 - temporaries
+a0-a7 - function arguments / return values
+ra - return address
+
+zero - hardwired to 0
+s0 or fp - saved register / frame pointer
+s1 - saved register
+s2-s11 - saved registers
+sp - stack pointer
+gp - global pointer
+tp - thread pointer
